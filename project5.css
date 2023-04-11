@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    background: rgb(140, 142, 235);
+}
+
+.wrapper {
+    margin: 50px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, 265px);
+    /* justify-content: center; */
+}
+
+.wrapper li {
+    height: 250px;
+    list-style: none;
+    background: white;
+    border-radius: 5px;
+    padding: 15px 20px 20px;
+    /* justify-content: center; */
+}
+
+.add-box {
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.add-box,
+.icon,
+.bottom-content,
+.settings .menu li,
+.popup,
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-box .icon {
+    height: 78px;
+    width: 78px;
+    color: cornflowerblue;
+    font-size: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    border: 2px dashed cornflowerblue;
+}
+
+.add-box p {
+    color: cornflowerblue;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.wrapper .note {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note p {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.note span {
+    color: #575757;
+    font-size: 16px;
+    display: block;
+    margin-top: 5px;
+}
+
+.note .bottom-content {
+    padding-top: 10px;
+    border-top: 1px solid #cccc;
+}
+
+.bottom-content span .settings {
+    color: #6d6d6d;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.settings {
+    position: relative;
+}
+
+.settings .menu {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    padding: 5px 0;
+    background: white;
+    border-radius: 4px;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+    transform-origin: bottom right;
+}
+
+.settings.show .menu {
+    transform: scale(1);
+}
+
+.settings .menu li {
+    height: 25px;
+    border-radius: 0;
+    justify-content: flex-start;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 17px 15px;
+}
+
+.menu .li:hover {
+    background: whitesmoke;
+}
+
+.menu .li i {
+    padding-right: 8px;
+}
+
+.popupbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.popupbox .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+    z-index: 3;
+    justify-content: center;
+}
+
+.popupbox,
+.popupbox .popup {
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s ease;
+}
+
+.popupbox.show,
+.popupbox .popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup .content {
+    background: #ffff;
+    border-radius: 5px;
+    width: calc(100% - 15px);
+}
+
+.popup .content header {
+    border-bottom: 1px solid #cccc;
+    padding: 15px 25px;
+}
+
+.content header {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content header {
+    color: #8b8989;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.content form {
+    margin: 15px 25px 35px;
+}
+
+.content form .row {
+    margin-bottom: 20px;
+}
+
+form .row label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.content form :where(input, textarea) {
+    width: 100%;
+    border: 1px solid #9999;
+    border-radius: 4px;
+    outline: none;
+    height: 50px;
+    font-size: 17px;
+    padding: 0, 15px;
+}
+
+.content form textarea {
+    height: 150px;
+    resize: none;
+    padding: 8px 15px;
+}
+
+.content form button {
+    width: 100%;
+    height: 50px;
+    background: #6a93f8;
+    outline: none;
+    color: #fff;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
